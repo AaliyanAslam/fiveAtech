@@ -31,8 +31,8 @@ const services = [
     icon: Database,
     title: 'Inventory Management System',
     description: 'Comprehensive inventory management solutions for both online and offline businesses with real-time tracking.',
-    features: ['Real-time Tracking', 'Barcode Integration', 'Multi-location Support', 'Automated Alerts', 'Reporting & Analytics', 'Cloud & Offline Sync'],
-    technologies: ['Node.js', 'React', 'PostgreSQL', 'MongoDB', 'REST APIs', 'Cloud Services']
+    features: ['Real-time Tracking', 'Barcode Integration', 'Multi-location Support', 'Automated Alerts', 'Reporting & Analytics'],
+    technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3']
   },
   {
     icon: Dumbbell,
@@ -53,14 +53,14 @@ const services = [
     title: 'App Development',
     description: 'Native and cross-platform mobile applications for iOS and Android with intuitive user experiences.',
     features: ['Native iOS & Android', 'Cross-platform Solutions', 'UI/UX Design', 'API Integration', 'Push Notifications', 'App Store Optimization'],
-    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'App Store APIs']
+    technologies: ['React Native', 'Firebase', 'App Store APIs']
   },
   {
     icon: Code,
     title: 'Custom Software Development',
     description: 'Bespoke software solutions designed to meet your unique business requirements and workflows.',
     features: ['Requirements Analysis', 'Custom Architecture', 'Database Design', 'API Development', 'Testing & QA', 'Deployment & Maintenance'],
-    technologies: ['Python', 'Java', 'C#', '.NET', 'AWS', 'Docker']
+    technologies: ['PHP', 'AWS', 'MySQL', 'JavaScript','Node.js', 'Laravel']
   }
 ];
 
