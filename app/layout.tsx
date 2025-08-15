@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    shortcut: '/shortcut-icon.png',
+ 
   },
+
 };
 
 export default function RootLayout({
@@ -47,19 +47,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-            <ScrollToTop />
-          </div>
-        </ThemeProvider>
-      </body>
-    </html>
+  <html lang="en" suppressHydrationWarning>
+  <body className={inter.className}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </ThemeProvider>
+  </body>
+</html>
+
   );
 }
