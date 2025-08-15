@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
-
+import Image from 'next/image';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
@@ -35,9 +35,13 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">5A</span>
-            </div>
+           {
+            theme === 'dark' ? (
+              <Image src="/favicon.png" alt="FiveAtech" width={32} height={32} className='rounded' />
+            ) : (
+              <Image src="/faviconr.png" alt="FiveAtech" width={32} height={32} />
+            )
+           }
             <span className="text-xl font-bold text-foreground">FiveAtech</span>
           </Link>
 

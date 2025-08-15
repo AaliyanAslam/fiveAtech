@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { ScrollToTop } from '@/components/scroll-to-top';
+import FavIcon from '@/public/faviconr.png'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,10 +35,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: '/favicon.ico',
- 
-  },
+
 
 };
 
@@ -48,6 +46,10 @@ export default function RootLayout({
 }) {
   return (
   <html lang="en" suppressHydrationWarning>
+  <head>
+  <link  rel="icon" type="image/x-icon" href={FavIcon.src} />
+</head>
+
   <body className={inter.className}>
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="flex min-h-screen flex-col">

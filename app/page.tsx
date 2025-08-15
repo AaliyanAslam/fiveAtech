@@ -193,7 +193,7 @@ export default function Home() {
                   Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button asChild size="lg" variant="outline" className="border-white  text-blue-600 hover:bg-blue-50">
                 <Link href="/portfolio">See Our Work</Link>
               </Button>
             </div>
