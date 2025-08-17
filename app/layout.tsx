@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import FavIcon from "@/public/faviconr.png";
 
