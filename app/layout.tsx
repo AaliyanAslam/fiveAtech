@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import FavIcon from "@/public/faviconr.png";
-import  { Footer }  from "@/components/Footer";
+import  { Footer }  from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

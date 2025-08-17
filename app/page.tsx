@@ -90,16 +90,29 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative z-10 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl">
-                <div className="grid grid-cols-2 gap-4">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-2xl lg:text-3xl font-bold text-blue-600">{stat.number}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="relative z-10 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl">
+  <div className="grid grid-cols-2 gap-6">
+    {stats.map((stat, index) => (
+      <div
+        key={index}
+        className="text-center group transition-all duration-500 transform hover:scale-105"
+      >
+        <div className="text-2xl lg:text-4xl font-extrabold text-blue-600 dark:text-blue-400 
+                        group-hover:text-blue-700 dark:group-hover:text-blue-300 
+                        transition-colors duration-300">
+          {stat.number}
+        </div>
+        <div className="text-sm lg:text-base text-gray-600 dark:text-gray-300 
+                        mt-2 opacity-80 group-hover:opacity-100 transition-opacity">
+          {stat.label}
+        </div>
+        {/* Glow/underline effect */}
+        <div className="h-1 w-0 group-hover:w-full bg-blue-500 dark:bg-blue-400 rounded-full mx-auto mt-2 transition-all duration-500"></div>
+      </div>
+    ))}
+  </div>
+</div>
+
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-200 dark:bg-blue-800 rounded-full opacity-50"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-200 dark:bg-indigo-800 rounded-full opacity-30"></div>
             </motion.div>
@@ -171,35 +184,69 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto space-y-8"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl opacity-90">
-              Let's discuss your project and create something amazing together. 
-              Get a free consultation and quote today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-                <Link href="/contact">
-                  Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-white  text-blue-600 hover:bg-blue-50">
-                <Link href="/portfolio">See Our Work</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white overflow-hidden">
+  {/* Animated gradient overlay */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]"></div>
+
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="max-w-3xl mx-auto space-y-8"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-3xl lg:text-5xl font-extrabold leading-tight"
+      >
+        Ready to Transform Your Business?
+      </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="text-lg lg:text-xl opacity-90"
+      >
+        Let's discuss your project and create something amazing together. 
+        Get a free consultation and quote today.
+      </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        className="flex flex-col sm:flex-row gap-4 justify-center"
+      >
+        {/* Primary Button */}
+        <Button
+          asChild
+          size="lg"
+          variant="secondary"
+          className="bg-white text-blue-600 hover:bg-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          <Link href="/contact">
+            Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
+
+        {/* Outline Button */}
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="border-2 bg-white border-white text-blue-600 hover:bg-white hover:text-blue-600 hover:shadow-lg hover:scale-105 transition-all duration-300"
+        >
+          <Link href="/portfolio">See Our Work</Link>
+        </Button>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }
